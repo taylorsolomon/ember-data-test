@@ -1,6 +1,11 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
+{{!-- <WelcomePage /> --}}
 {{!-- Feel free to remove this! --}}
 
 {{outlet}}
 
+<ul>
+  {{#each this.model.pokemonEntries as |pokemon|}}
+    <li><LinkTo @route="pokemon" @model={{pokemon.id}}>{{pokemon.name}}</LinkTo></li>
+  {{/each}}
+</ul>
